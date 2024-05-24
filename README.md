@@ -60,3 +60,25 @@ if __name__ == "__main__":
 - **電子郵件：** 11232043@stu.tshs.tp.edu.tw
 
 #ans4
+import random
+
+def guess_number(target, max_attempts):
+    attempts = 0
+    while attempts < max_attempts:
+        guess = int(input("請猜一個數字："))
+        if guess == target:
+            print("恭喜你，猜對了！")
+            return
+        elif guess < target:
+            print("太低了，再猜一次！")
+        else:
+            print("太高了，再猜一次！")
+        attempts += 1
+    print("你已經猜了", max_attempts, "次了，遊戲結束。")
+
+if __name__ == "__main__":
+    x1 = 1  # 最小數字
+    x2 = 100  # 最大數字
+    target = random.randint(x1, x2)  # 隨機生成目標數字
+    max_attempts = 5  # 最大猜測次數
+    guess_number(target, max_attempts)
